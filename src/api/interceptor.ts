@@ -12,6 +12,7 @@ export interface CustomConfig extends AxiosRequestConfig {
   contentType?: 'multipart/form-data'
   [key: string]: unknown
   token?: string
+  headers?: Record<string, string>
 }
 
 type PendingRequest = {
@@ -74,6 +75,11 @@ export default class Interceptors {
           timestamp: new Date().getTime()
         }
       })
+      if (config.headers) {
+        Object.assign(config.headers, {
+          'Content-Type': 'application/json'
+        })
+      }
       return config
     })
     this.instance.interceptors.response.use(
