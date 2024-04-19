@@ -12,7 +12,6 @@ export interface CustomConfig extends AxiosRequestConfig {
   contentType?: 'multipart/form-data'
   [key: string]: unknown
   token?: string
-  headers?: Record<string, string>
 }
 
 type PendingRequest = {
