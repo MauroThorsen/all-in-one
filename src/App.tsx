@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import { BaseButton } from './components'
 import { Icons } from '@/components'
 import { encodeSVG } from '@/components/utils.ts'
